@@ -96,6 +96,7 @@ while running:
             
             all_sprites.remove(sprite4)
             won = True
+            
         
         
             
