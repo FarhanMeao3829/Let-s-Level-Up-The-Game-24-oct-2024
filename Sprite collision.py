@@ -54,6 +54,18 @@ sprite2.rect.x, sprite2.rect.y = random.randint(0, SCREEN_WIDTH - sprite2.rect.w
 
 all_sprites.add(sprite2)
 
+sprite3 = Sprite(pygame.Color('blue'), 20, 30)
+
+sprite3.rect.x, sprite3.rect.y = random.randint(0, SCREEN_WIDTH - sprite3.rect.width), random.randint(0, SCREEN_HEIGHT - sprite3.rect.height)
+
+all_sprites.add(sprite3)
+
+sprite4 = Sprite(pygame.Color('green'), 20, 30)
+
+sprite4.rect.x, sprite4.rect.y = random.randint(0, SCREEN_WIDTH - sprite4.rect.width), random.randint(0, SCREEN_HEIGHT - sprite4.rect.height)
+
+all_sprites.add(sprite4)
+
 running, won = True, False
 clock = pygame.time.Clock()
 
@@ -75,7 +87,18 @@ while running:
         if sprite1.rect.colliderect(sprite2.rect):
             
             all_sprites.remove(sprite2)
+            
+        elif sprite1.rect.colliderect(sprite3.rect):
+            
+            all_sprites.remove(sprite3)
+            
+        elif sprite1.rect.colliderect(sprite4):
+            
+            all_sprites.remove(sprite4)
             won = True
+        
+        
+            
             
     screen.blit(background_image, (0,0))
     all_sprites.draw(screen)
